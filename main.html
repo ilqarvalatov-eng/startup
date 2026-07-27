@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Əsas Səhifə | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <h2>form<span>startup</span></h2>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="#" class="active">Ana Səhifə</a>
+            <a href="#">Haqqımızda</a>
+            <a href="#">Xidmətlər</a>
+            <a href="#">Əlaqə</a>
+        </nav>
+
+        <div class="nav-right">
+            <button id="toggle-theme-btn" class="theme-btn" type="button">🌙 Qaranlıq Rejim</button>
+            
+            <div class="user-profile-badge" id="open-profile-btn">
+                <div class="avatar" id="avatar-initials">U</div>
+                <span id="nav-user-name">Yüklənir...</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <section class="welcome-card">
+            <h1>Xoş gəldiniz, <span id="user-name">İstifadəçi</span>! 👋</h1>
+            <p>Hesabınız tam aktivdir. Aşağıdan profil parametrlərinizə və sistem göstəricilərinizə baxış keçirə bilərsiniz.</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">👤</div>
+                <h3>Profil Statusu</h3>
+                <p>Hesabınız təsdiqlənib və təhlükəsizdir.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Aktivlik</h3>
+                <p>Son giriş: Bu gün</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔒</div>
+                <h3>Təhlükəsizlik</h3>
+                <p>Firebase Auth ilə qorunur.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-card">
+            <button class="close-btn" id="close-profile-btn">&times;</button>
+            
+            <div class="modal-header">
+                <div class="large-avatar" id="modal-avatar-initials">U</div>
+                <h3 id="modal-user-fullname">Yüklənir...</h3>
+                <p id="modal-user-email">email@mail.com</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="info-row">
+                    <span>Telefon:</span>
+                    <strong id="modal-user-phone">+994 -- --- -- --</strong>
+                </div>
+                <div class="info-row">
+                    <span>Status:</span>
+                    <strong style="color: #28a745;">Aktiv İstifadəçi</strong>
+                </div>
+            </div>
+
+            <button id="logout-btn" class="logout-btn">🚪 Çıxış Et</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
+</html>

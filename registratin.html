@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qeydiyyat Formu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="theme-toggle">
+        <span id="theme-icon">🌙</span>
+        <button id="toggle-theme-btn" type="button">Qaranlıq Rejim</button>
+    </div>
+
+    <div class="form-container">
+        <h2>Qeydiyyat</h2>
+        <p>Hesabınızı yaratmaq üçün məlumatları doldurun</p>
+
+        <form id="register-form">
+            
+            <div class="input-group">
+                <label for="fullname">Ad və Soyad</label>
+                <input type="text" id="fullname" name="Ad_Soyad" placeholder="Elvin Məmmədov" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">E-poçt Ünvanı</label>
+                <input type="email" id="email" name="Epoct" placeholder="nümunə@mail.com" required>
+            </div>
+
+            <div class="input-group password-group">
+                <label for="password">Şifrə</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="Sifre" placeholder="••••••••" required>
+                    <span id="toggle-password" class="eye-btn">👁️</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+             <label for="phone">Telefon Nömrəsi</label>
+              <input type="tel" id="phone" name="Telefon" placeholder="+994 50 123 45 67" pattern="[+0-9\s-]{9,15}" required>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="Sertler_Qebul_Edildi" value="Bəli" required>
+                <label for="terms">
+                    <a href="sertler.html" target="_blank">İstifadə şərtləri</a> ilə razıyam
+                </label>
+            </div>
+            <button type="submit" class="submit-btn">Qeydiyyatdan Keç</button>
+
+        </form>
+    </div>
+
+   <script>
+        window.toggleTheme = function() {
+            document.body.classList.toggle('dark-mode');
+            const btn = document.getElementById('toggle-theme-btn');
+            if (document.body.classList.contains('dark-mode')) {
+                btn.textContent = '☀️ Açıq Rejim';
+            } else {
+                btn.textContent = '🌙 Qaranlıq Rejim';
+            }
+        };
+
+        window.togglePasswordVisibility = function() {
+            const passInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('toggle-password');
+            
+            if (passInput.type === 'password') {
+                passInput.type = 'text';
+                eyeIcon.textContent = '🙈';
+            } else {
+                passInput.type = 'password';
+                eyeIcon.textContent = '👁️';
+            }
+        };
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
